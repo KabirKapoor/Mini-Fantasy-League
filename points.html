@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>Fantasy League</title>
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+        <link rel="stylesheet" href="proj.css">
+        
+        <!-- UIkit JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+        
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#config-web-app -->
+        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        
+    </head>
+    
+<body>
+
+        <script>
+                // Your web app's Firebase configuration
+                var firebaseConfig = {
+                  apiKey: "AIzaSyC-HNPSTaNYR4WRXLNN2V74bvSfXR8oTW8",
+                  authDomain: "webpageproject-d9e06.firebaseapp.com",
+                  databaseURL: "https://webpageproject-d9e06.firebaseio.com",
+                  projectId: "webpageproject-d9e06",
+                  storageBucket: "webpageproject-d9e06.appspot.com",
+                  messagingSenderId: "851729359946",
+                  appId: "1:851729359946:web:9d9399e51e9db05a"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                var database = firebase.database();
+        </script>        
+
+
+
+        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+        <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-left">
+            
+                    <ul class="uk-navbar-nav">
+                        <li><a href="FPL.html">Build Team</a></li>
+                        <li class="uk-active">
+                           <a href="#" >Points</a>
+                        </li>
+                       
+                    </ul>
+            
+                </div>
+                <div class="uk-navbar-center">
+                    <a href="#" class="uk-navbar-item uk-logo">Mini Fantasy League</a>
+                </div>
+                <div class="uk-navbar-right">
+            
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <a href="#">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>   
+        
+        <div>   
+                <table id="ulist">   
+                <script>
+                    
+                var tab=document.querySelector("#ulist");
+
+                var header = tab.createTHead();
+                var row = header.insertRow(0);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = "<b> Username </b>";
+                cell2.innerHTML = "<b> Points </b>";
+                var row=tab.insertRow(-1);
+                database.ref('users').on('value', function(snapshot) {
+                snapshot.forEach(function(childSnapshot) {
+                    var childKey = childSnapshot.key;
+                    var childData = childSnapshot.val(); 
+                    var row=tab.insertRow(-1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    cell1.innerHTML = childData.username;
+                    cell2.innerHTML = childData.points;
+                    });
+                });    
+        
+                </script> 
+            </table>     
+            
+            
+
+            
+            
+
+
+        </div>
+
+
+        
+        
+        
+
+
+
+</body>
+
+</html>

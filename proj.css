@@ -1,0 +1,66 @@
+#plist{
+    padding: 40px;
+    width: 50%;
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 20px;
+    margin:20px;
+    float: right;
+}
+
+#plist td, #plist th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+#plist th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #00ff87;
+    color: white;
+}
+
+body{
+    background: white;
+    color: black;
+}
+
+.uk-navbar-nav{
+    background: #00ff87;
+}
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: #00ff87;
+}
+
+.uk-card{
+    width: 40%;
+    margin: 30px;
+    
+}
+
+.uk-button-large{
+    margin: 10px 30%;
+}
+
+#ulist{
+    padding: 40px;
+    width: 50%;
+    border: 2px solid black;
+    border-collapse: collapse;
+    font-size: 20px;
+    margin:40px 25%;
+    
+}
+#ulist td, #ulist th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+#ulist th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #00ff87;
+    color: white;
+}
